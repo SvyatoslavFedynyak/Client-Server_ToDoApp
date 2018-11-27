@@ -10,14 +10,6 @@
         MinHeight="300" MinWidth="500"
         WindowStartupLocation="CenterScreen"
         Style="{DynamicResource ModalWindowResizable}">
-    <!--RESOURCE-->
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Theme/Pincky.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
 
     <Grid>
         <!--SCALING-->
