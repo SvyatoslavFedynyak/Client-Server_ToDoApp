@@ -100,6 +100,48 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\InterfaceImg\BrokenHeart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\InterfaceImg\Heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\InterfaceImg\Minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\InterfaceImg\Plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MenuImg\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MenuImg\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MenuImg\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MenuImg\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MenuImg\LogOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MenuImg\Maximize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MenuImg\Minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MenuImg\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MenuImg\Setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OtherImg\NoImg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
