@@ -1,24 +1,89 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Models.Entities;
+﻿using Models.Entities;
 using System.Data.Entity;
 
 namespace DataBaseControl.Context
 {
     class AppContext : DbContext
     {
+        // FIELDS
+        DbSet<Photo> photos;
+        DbSet<Subject> subjects;
+        DbSet<Comment> comments;
+        DbSet<Like> likes;
+        DbSet<Message> messages;
+        DbSet<User> users;
+
+        // CONSTRUCTORS
         public AppContext()
-            :base("AppDbConnection")
+            : base("AppDbConnection")
         { }
 
-        DbSet<Photo> Photos { get; set; }
-        DbSet<Subject> Subjects { get; set; }
-        DbSet<Comment> Comments { get; set; }
-        DbSet<Like> Likes { get; set; }
-        DbSet<Message> Messages { get; set; }
-        DbSet<User> Users { get; set; }
+        // PROPERTIES
+        DbSet<Photo> Photos
+        {
+            get
+            {
+                return photos;
+            }
+            set
+            {
+                photos = value;
+            }
+        }
+        DbSet<Subject> Subjects
+        {
+            get
+            {
+                return subjects;
+            }
+            set
+            {
+                subjects = value;
+            }
+        }
+        DbSet<Comment> Comments
+        {
+            get
+            {
+                return comments;
+            }
+            set
+            {
+                comments = value;
+            }
+        }
+        DbSet<Like> Likes
+        {
+            get
+            {
+                return likes;
+            }
+            set
+            {
+                likes = value;
+            }
+        }
+        DbSet<Message> Messages
+        {
+            get
+            {
+                return messages;
+            }
+            set
+            {
+                messages = value;
+            }
+        }
+        DbSet<User> Users
+        {
+            get
+            {
+                return users;
+            }
+            set
+            {
+                users = value;
+            }
+        }
     }
 }
