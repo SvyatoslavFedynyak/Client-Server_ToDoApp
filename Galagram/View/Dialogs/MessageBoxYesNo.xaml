@@ -9,16 +9,7 @@
         Height="200" Width="400"
         Style="{DynamicResource ModalWindow}"
         WindowStartupLocation="CenterScreen">
-    
-    <!--RESOURCE-->
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Theme/Pincky.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
-    
+ 
     <Grid>
         <!--SCALING-->
         <Grid.RowDefinitions>
