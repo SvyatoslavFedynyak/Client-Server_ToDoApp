@@ -35,7 +35,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DataBaseControl">
+      <HintPath>..\DataBaseControl\DLL\DataBaseControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Models">
+      <HintPath>..\Models\DLL\Models.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="ViewModel">
+      <HintPath>..\ViewModel\DLL\ViewModel.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -50,8 +59,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\DbControlTests.cs" />
+    <Compile Include="Tests\ModelsTests.cs" />
+    <Compile Include="Tests\ViewModelsTests.cs" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

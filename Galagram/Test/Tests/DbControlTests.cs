@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Models
+namespace Test.Tests
 {
-    public class Class1
+    class DbControlTests
     {
     }
 }

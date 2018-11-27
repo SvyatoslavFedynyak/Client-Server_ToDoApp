@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataBaseControl
+namespace Test.Tests
 {
-    public class Class1
+    class ViewModelsTests
     {
     }
 }
