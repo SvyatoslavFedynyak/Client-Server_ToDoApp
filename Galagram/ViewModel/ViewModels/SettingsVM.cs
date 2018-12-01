@@ -30,7 +30,7 @@ namespace ViewModel.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         // PROPERTIES
-        public User currentUser { get; private set; }
+        public User CurrentUser { get; private set; }
         public string Nickname
         {
             set
