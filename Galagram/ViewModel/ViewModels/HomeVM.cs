@@ -1,62 +1,141 @@
-﻿using Models.Entities;
+using ViewModel.Commands;
+
+using Models.Entities;
+using View;
+using System.ComponentModel;
+using System.Collections.ObjectModel;
 
 namespace ViewModel.ViewModels
 {
-    public class HomeVM
+    public class HomeVM : INotifyPropertyChanged
     {
-        // Properties
-        User Owner { get; }
+        // FIELDS
+        #region Windows
+        View.User.MainWindow mainWindow;
+        #endregion
 
-        // Methods
-        public void Follow()
+        #region Commands
+        private RelayCommand follow;
+        private RelayCommand home;
+        private RelayCommand following;
+        private RelayCommand search;
+        private RelayCommand addPhoto;
+        private RelayCommand info;
+        private RelayCommand settings;
+        private RelayCommand exit;
+        private RelayCommand openPhoto;
+        private RelayCommand logOut;
+        private RelayCommand followers;
+        private RelayCommand selectPhoto;
+        #endregion
+
+        // EVENTS
+        /// <summary>
+        /// Event that invokes when some propery changed.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        // PROPERTIES
+        public User Owner { get; }
+
+        #region Commands
+        /// <summary>
+        /// Property that enable to interact with search command.
+        /// </summary>
+        /// <returns>Log In command.</returns>
+        public RelayCommand Follow => follow;
+        public RelayCommand Home => home;
+        public RelayCommand Following => following;
+        public RelayCommand Search => search;
+        public RelayCommand AddPhoto => addPhoto;
+        public RelayCommand Info => info;
+        public RelayCommand Settings => settings;
+        public RelayCommand Exit => exit;
+        public RelayCommand OpenPhoto => openPhoto;
+        public RelayCommand LogOut => logOut;
+        public RelayCommand Followers => followers;
+        public RelayCommand SelectPhoto => selectPhoto;
+        #endregion
+
+        // CONSTRUCTORS
+        /// <summary>
+        /// Basic constructor without parameters.
+        /// </summary>
+        public HomeVM()
         {
-            throw new System.NotImplementedException();
-        }
-        public void Home()
-        {
-            throw new System.NotImplementedException();
-        }
-        public void Following()
-        {
-            throw new System.NotImplementedException();
-        }
-        public void Search()
-        {
-            throw new System.NotImplementedException();
-        }
-        public void AddPhoto()
-        {
-            throw new System.NotImplementedException();
-        }
-        public void Info()
-        {
-            throw new System.NotImplementedException();
-        }
-        public void Settings()
-        {
-            throw new System.NotImplementedException();
-        }
-        public void Exit()
-        {
-            throw new System.NotImplementedException();
-        }
-        public void OpenPhoto()
-        {
-            throw new System.NotImplementedException();
-        }
-        public void LogOut()
-        {
-            throw new System.NotImplementedException();
-        }
-        public void Followers()
-        {
-            throw new System.NotImplementedException();
-        }
-        public void SelectPhoto()
-        {
-            throw new System.NotImplementedException();
+            #region Window Initialize
+            mainWindow = null;
+            #endregion
+
+            #region Commands Initialize
+
+            #endregion
         }
 
+        // METHODS
+        #region Commands
+        private void FollowMethod(object obj)
+        {
+
+        }
+
+        private void HomeMethod(object obj)
+        {
+
+        }
+
+        private void FollowingMethod(object obj)
+        {
+
+        }
+        private void SearchMethod(object obj)
+        {
+
+        }
+        private void AddPhotoMethod(object obj)
+        {
+
+        }
+        private void InfoMethod(object obj)
+        {
+
+        }
+        private void SettingsMethod(object obj)
+        {
+
+        }
+        private void ExitMethod(object obj)
+        {
+
+        }
+        private void OpenPhotoMethod(object obj)
+        {
+
+        }
+        private void LogOutMethod(object obj)
+        {
+
+        }
+        private void FollowersMethod(object obj)
+        {
+
+        }
+        private void SelectPhotoMethod(object obj)
+        {
+
+        }
+        #endregion
+
+        #region Event Raising
+        /// <summary>
+        /// Method that invokes Property Change event
+        /// </summary>
+        /// <param name="e">Property Changed Event Args</param>
+        protected void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            PropertyChanged?.Invoke(this, e);
+        }
+        #endregion
 
     }
 }
