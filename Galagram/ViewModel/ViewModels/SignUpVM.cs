@@ -1,8 +1,8 @@
+using DataBaseControl.Services;
 using ViewModel.Commands;
-
 using Models.Entities;
-using View;
 using System.ComponentModel;
+using System.Linq;
 
 namespace ViewModel.ViewModels
 {
@@ -12,13 +12,10 @@ namespace ViewModel.ViewModels
     public class SignUpVM : INotifyPropertyChanged
     {
         // FIELDS
-        private string login;
+        private string nickname;
         private string password;
         private User currentUser;
-
-        #region Windows
-        Registration registrationWindow;
-        #endregion
+        private UnitOfWork unitOfWork;
 
         #region Commands
         private RelayCommand logIn;
@@ -33,9 +30,9 @@ namespace ViewModel.ViewModels
 
         // PROPERTIES
         /// <summary>
-        /// Propetry that enable to interract with current driver
+        /// Property that enable to interact with current user.
         /// </summary>
-        /// <returns>Current driver</returns>
+        /// <returns>Current user.</returns>
         public User CurrentUser
         {
             get
@@ -51,15 +48,15 @@ namespace ViewModel.ViewModels
         /// <summary>
         /// Property that enable to interact with user login.
         /// </summary>
-        public string Login
+        public string Nickname
         {
             set
             {
-                login = value;
+                nickname = value;
             }
         }
         /// <summary>
-        /// Property that enable to interact with user password
+        /// Property that enable to interact with user password.
         /// </summary>
         public string Password
         {
@@ -88,14 +85,14 @@ namespace ViewModel.ViewModels
         /// </summary>
         public SignUpVM()
         {
-            #region Window Initialize
-            registrationWindow = null;
-            #endregion
+            nickname = null;
+            password = null;
+            currentUser = null;
+            unitOfWork = new UnitOfWork();
 
             #region Commands Initialize
-            //logIn = new RelayCommand(LogInMethod, IsNotAuthorized);
-            //logOut = new RelayCommand(LogOutMethod, IsAuthorized);
-            //signUp = new RelayCommand(SignUpMethod, IsNotAuthorized);
+            logIn = new RelayCommand(LogInMethod, IsNotAuthorized);
+            signUp = new RelayCommand(SignUpMethod, IsNotAuthorized);
             #endregion
         }
 
@@ -103,19 +100,106 @@ namespace ViewModel.ViewModels
         #region Commands
         private void LogInMethod(object obj)
         {
+            // checking
+            if (CheckRegistrateFields())
+            {
+                // logic
+                User userFromDb = null;
+                bool logInRes = false;
+                try
+                {
+                    userFromDb = unitOfWork.UserRepository
+                        .Get(filter: user => user.NickName == nickname && user.Password == password).First();
 
+                    logInRes = (userFromDb != null);
+                }
+                catch (System.IO.IOException ex)
+                    when (ex is System.IO.FileNotFoundException || ex is System.IO.DirectoryNotFoundException)
+                {
+                    ExecuteMessageWindow("Error", "Log in operation is unavailable. Data file or database is missing.");
+                    return;
+                }
+
+                if (logInRes)
+                {
+                    CurrentUser = userFromDb;
+                    new View.User.MainWindow()
+                    {
+                        // send CurrentUser
+                    };
+                    // closing current window
+                }
+                else
+                {
+                    ExecuteMessageWindow("Account problem", "The name or password is incorrect.");
+                }
+            }
         }
 
         private void SignUpMethod(object obj)
         {
-  
+            // checking
+            if (CheckRegistrateFields())
+            {
+                // logic
+                User userFromDb = null;
+                bool signUpRes = false;
+                try
+                {
+                    userFromDb = unitOfWork.UserRepository
+                        .Get(filter: user => user.NickName == nickname).First();
+
+                    if (userFromDb == null)
+                    {
+                        userFromDb = new User()
+                        {
+                            NickName = nickname,
+                            Password = password,
+                            Album = new System.Collections.Generic.List<Photo>(),
+                            Followers = new System.Collections.Generic.List<User>(),
+                            Following = new System.Collections.Generic.List<User>(),
+                            IsAdmin = false
+                        };
+                        unitOfWork.UserRepository.Insert(userFromDb);
+                        unitOfWork.Save();
+                        signUpRes = true;
+                    }
+                }
+                catch (System.IO.IOException ex)
+                    when (ex is System.IO.FileNotFoundException || ex is System.IO.DirectoryNotFoundException)
+                {
+                    ExecuteMessageWindow("Error", "Sign up operation is unavailable. Data file or database is missing");
+                    return;
+                }
+
+                if (signUpRes)
+                {
+                    CurrentUser = userFromDb;
+                    new View.User.MainWindow()
+                    {
+                        // send CurrentUser
+                    };
+                    // closing current window
+                }
+                else
+                {
+                    ExecuteMessageWindow("Account problem", "The name is incorrect.");
+                }
+            }
+        }
+        #endregion
+
+        #region Restriction
+        private bool IsNotAuthorized(object o)
+        {
+            return CurrentUser == null;
         }
         #endregion
 
         #region Additional Methods
         private bool CheckRegistrateFields()
         {
-            if (string.IsNullOrWhiteSpace(login))
+            if (string.IsNullOrWhiteSpace(nickname))
             {
                 ExecuteMessageWindow("Empty Login", "Login can not be empty!");
                 return false;
@@ -148,6 +232,5 @@ namespace ViewModel.ViewModels
             PropertyChanged?.Invoke(this, e);
         }
         #endregion
-
     }
 }
