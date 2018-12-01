@@ -3,7 +3,6 @@ using ViewModel.Commands;
 using Models.Entities;
 using View;
 using System.ComponentModel;
-using System.Collections.ObjectModel;
 
 namespace ViewModel.ViewModels
 {
@@ -29,7 +28,7 @@ namespace ViewModel.ViewModels
 
         // PROPERTIES
         public User CurrentUser { get; }
-        public ObservableCollection<Subject> Subjects { get; }
+        public Subject[] Subjects { get; }
         /// <summary>
         /// Propetry that enable to interract with current driver
         /// </summary>
