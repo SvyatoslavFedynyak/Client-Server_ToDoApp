@@ -1,4 +1,4 @@
-﻿using ViewModel.Commands;
+using ViewModel.Commands;
 
 using Models.Entities;
 using View;
@@ -11,6 +11,7 @@ namespace ViewModel.ViewModels
     {
         // FIELDS
         private Comment selectedComment;
+        private Comment[] comments;
 
         #region Windows
         View.User.PhotoInside photoWindow;
@@ -31,7 +32,18 @@ namespace ViewModel.ViewModels
 
         // PROPERTIES
         public string Photo { get; }
-        public ObservableCollection<Comment> Comments { get; }
+        public Comment[] Comments
+        {
+            get
+            {
+                return comments;
+            }
+            set
+            {
+                comments = value;
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(Comments)));
+            }
+        }
         public Comment SelectedComment
         {
             get
