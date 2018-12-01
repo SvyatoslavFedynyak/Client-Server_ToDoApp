@@ -7,7 +7,7 @@ using System.Collections.ObjectModel;
 
 namespace ViewModel.ViewModels
 {
-    class SearchVM : INotifyPropertyChanged
+    public class SearchVM : INotifyPropertyChanged
     {
         // FIELDS
         private string data;
@@ -80,7 +80,7 @@ namespace ViewModel.ViewModels
         #region Commands
         private void SearchMethod(object obj)
         {
- 
+    
         }
         #endregion
 
