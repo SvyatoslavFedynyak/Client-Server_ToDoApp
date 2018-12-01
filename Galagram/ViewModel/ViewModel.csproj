@@ -36,6 +36,7 @@
     <Reference Include="Models">
       <HintPath>..\Models\DLL\Models.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\FollowerVM.cs" />
     <Compile Include="ViewModels\HomeVM.cs" />
@@ -54,7 +56,12 @@
     <Compile Include="ViewModels\SettingsVM.cs" />
     <Compile Include="ViewModels\SignUpVM.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\View\View.csproj">
+      <Project>{c566add8-c5f9-45a2-937c-0ea3a6c8ae09}</Project>
+      <Name>View</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
