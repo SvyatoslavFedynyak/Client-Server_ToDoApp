@@ -11,7 +11,7 @@ namespace ViewModel.ViewModels
     {
         // FIELDS
         private string text;
-        private Subject currentSubject;
+        private Subject selectedSubject;
 
         #region Windows
         View.User.AskQuestion askQuestionWindow;
@@ -34,16 +34,16 @@ namespace ViewModel.ViewModels
         /// Propetry that enable to interract with current driver
         /// </summary>
         /// <returns>Current driver</returns>
-        public Subject CurrentSubject
+        public Subject SelectedSubject
         {
             get
             {
-                return currentSubject;
+                return selectedSubject;
             }
             set
             {
-                currentSubject = value;
-                OnPropertyChanged(new PropertyChangedEventArgs(nameof(CurrentSubject)));
+                selectedSubject = value;
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(SelectedSubject)));
             }
         }
         public string Text
