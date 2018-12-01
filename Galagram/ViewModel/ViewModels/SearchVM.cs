@@ -11,7 +11,7 @@ namespace ViewModel.ViewModels
     {
         // FIELDS
         private string data;
-        private User currentUser;
+        private User selectedUser;
 
         #region Windows
         View.User.Search searchWindow;
@@ -33,16 +33,16 @@ namespace ViewModel.ViewModels
         /// Propetry that enable to interract with current driver
         /// </summary>
         /// <returns>Current driver</returns>
-        public User CurrentUser
+        public User SelectedUser
         {
             get
             {
-                return currentUser;
+                return selectedUser;
             }
             set
             {
-                currentUser = value;
-                OnPropertyChanged(new PropertyChangedEventArgs(nameof(CurrentUser)));
+                selectedUser = value;
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(SelectedUser)));
             }
         }
         public string Data
@@ -80,7 +80,7 @@ namespace ViewModel.ViewModels
         #region Commands
         private void SearchMethod(object obj)
         {
-    
+   
         }
         #endregion
 
