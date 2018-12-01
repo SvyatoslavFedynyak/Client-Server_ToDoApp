@@ -3,7 +3,6 @@ using ViewModel.Commands;
 using Models.Entities;
 using View;
 using System.ComponentModel;
-using System.Collections.ObjectModel;
 
 namespace ViewModel.ViewModels
 {
@@ -28,7 +27,7 @@ namespace ViewModel.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         // PROPERTIES
-        public ObservableCollection<User> Users { get; }
+        public User[] Users { get; }
         /// <summary>
         /// Propetry that enable to interract with current driver
         /// </summary>
@@ -80,7 +79,7 @@ namespace ViewModel.ViewModels
         #region Commands
         private void SearchMethod(object obj)
         {
-   
+  
         }
         #endregion
 
