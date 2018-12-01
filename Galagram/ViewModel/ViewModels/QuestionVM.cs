@@ -28,6 +28,7 @@ namespace ViewModel.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         // PROPERTIES
+        public User currentUser { get; }
         public ObservableCollection<Subject> Subjects { get; }
         /// <summary>
         /// Propetry that enable to interract with current driver
