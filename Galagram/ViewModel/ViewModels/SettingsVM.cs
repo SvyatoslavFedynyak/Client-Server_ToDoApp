@@ -7,7 +7,7 @@ using System.Collections.ObjectModel;
 
 namespace ViewModel.ViewModels
 {
-    public class SettingsVM
+    public class SettingsVM : INotifyPropertyChanged
     {
         // FIELDS
         private string nickname;
