@@ -11,6 +11,7 @@ namespace ViewModel.ViewModels
         // FIELDS
         private string data;
         private User selectedUser;
+        public User[] users;
 
         #region Windows
         View.User.Search searchWindow;
@@ -27,7 +28,18 @@ namespace ViewModel.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         // PROPERTIES
-        public User[] Users { get; }
+        public User[] Users
+        {
+            get
+            {
+                return users;
+            }
+            set
+            {
+                users = value;
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(Users)));
+            }
+        }
         /// <summary>
         /// Propetry that enable to interract with current driver
         /// </summary>
@@ -79,7 +91,7 @@ namespace ViewModel.ViewModels
         #region Commands
         private void SearchMethod(object obj)
         {
-  
+
         }
         #endregion
 
