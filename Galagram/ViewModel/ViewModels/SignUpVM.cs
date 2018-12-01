@@ -126,7 +126,7 @@ namespace ViewModel.ViewModels
                     new View.User.MainWindow()
                     {
                         // send CurrentUser
-                    };
+                    }.Show();
                     // closing current window
                 }
                 else
@@ -178,7 +178,7 @@ namespace ViewModel.ViewModels
                     new View.User.MainWindow()
                     {
                         // send CurrentUser
-                    };
+                    }.Show();
                     // closing current window
                 }
                 else
