@@ -1,7 +1,7 @@
 using ViewModel.Commands;
 
 using Models.Entities;
-using View;
+using Galagram;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 
@@ -11,7 +11,7 @@ namespace ViewModel.ViewModels
     {
         // FIELDS
         #region Windows
-        View.User.MainWindow mainWindow;
+        Galagram.User.MainWindow mainWindow;
         #endregion
 
         #region Commands
@@ -39,21 +39,24 @@ namespace ViewModel.ViewModels
         public User Owner { get; }
 
         #region Commands
+        public RelayCommand Exit => exit;
+        public RelayCommand Home => home;
         /// <summary>
         /// Property that enable to interact with search command.
         /// </summary>
         /// <returns>Log In command.</returns>
-        public RelayCommand Follow => follow;
-        public RelayCommand Home => home;
-        public RelayCommand Following => following;
         public RelayCommand Search => search;
         public RelayCommand AddPhoto => addPhoto;
+
         public RelayCommand Info => info;
         public RelayCommand Settings => settings;
-        public RelayCommand Exit => exit;
-        public RelayCommand OpenPhoto => openPhoto;
         public RelayCommand LogOut => logOut;
+
+        public RelayCommand Follow => follow;
+        public RelayCommand Following => following;
         public RelayCommand Followers => followers;
+
+        public RelayCommand OpenPhoto => openPhoto;
         public RelayCommand SelectPhoto => selectPhoto;
         #endregion
 

@@ -1,7 +1,7 @@
 using ViewModel.Commands;
 
 using Models.Entities;
-using View;
+using Galagram;
 using System.ComponentModel;
 
 namespace ViewModel.ViewModels
@@ -13,7 +13,7 @@ namespace ViewModel.ViewModels
         private User[] followers;
 
         #region Windows
-        View.User.Follow followWindow;
+        Galagram.User.Follow followWindow;
         #endregion
 
         #region Commands
