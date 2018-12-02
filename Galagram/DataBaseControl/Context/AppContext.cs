@@ -19,7 +19,11 @@ namespace DataBaseControl.Context
         { }
 
         // PROPERTIES
-        DbSet<Photo> Photos
+        /// <summary>
+        /// Property that enable to interruct with photos data base set
+        /// </summary>
+        /// <returns>Photos set</returns>
+        public DbSet<Photo> Photos
         {
             get
             {
@@ -30,7 +34,11 @@ namespace DataBaseControl.Context
                 photos = value;
             }
         }
-        DbSet<Subject> Subjects
+        /// <summary>
+        /// Property that enable to interruct with subjects data base set
+        /// </summary>
+        /// <returns>Subjects set</returns>
+        public DbSet<Subject> Subjects
         {
             get
             {
@@ -41,7 +49,11 @@ namespace DataBaseControl.Context
                 subjects = value;
             }
         }
-        DbSet<Comment> Comments
+        /// <summary>
+        /// Property that enable to interruct with comments data base set
+        /// </summary>
+        /// <returns>Comments set</returns>
+        public DbSet<Comment> Comments
         {
             get
             {
@@ -52,7 +64,11 @@ namespace DataBaseControl.Context
                 comments = value;
             }
         }
-        DbSet<Like> Likes
+        /// <summary>
+        /// Property that enable to interruct with likes data base set
+        /// </summary>
+        /// <returns>Likes set</returns>
+        public DbSet<Like> Likes
         {
             get
             {
@@ -63,7 +79,11 @@ namespace DataBaseControl.Context
                 likes = value;
             }
         }
-        DbSet<Message> Messages
+        /// <summary>
+        /// Property that enable to interruct with messages data base set
+        /// </summary>
+        /// <returns>Messages set</returns>
+        public DbSet<Message> Messages
         {
             get
             {
@@ -74,7 +94,11 @@ namespace DataBaseControl.Context
                 messages = value;
             }
         }
-        DbSet<User> Users
+        /// <summary>
+        /// Property that enable to interruct with users data base set
+        /// </summary>
+        /// <returns>Users set</returns>
+        public DbSet<User> Users
         {
             get
             {
