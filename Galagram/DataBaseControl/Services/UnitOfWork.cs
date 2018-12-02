@@ -4,9 +4,9 @@ using Models.Entities;
 
 namespace DataBaseControl.Services
 {
-    class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
-        IGenericRepository<Comment> IUnitOfWork.CommentRepository
+        public IGenericRepository<Comment> CommentRepository
         {
             get
             {
@@ -14,7 +14,7 @@ namespace DataBaseControl.Services
             }
         }
 
-        IGenericRepository<Like> IUnitOfWork.LikeRepository
+        public IGenericRepository<Like> LikeRepository
         {
             get
             {
@@ -22,7 +22,7 @@ namespace DataBaseControl.Services
             }
         }
 
-        IGenericRepository<Message> IUnitOfWork.MessageRepository
+        public IGenericRepository<Message> MessageRepository
         {
             get
             {
@@ -30,7 +30,7 @@ namespace DataBaseControl.Services
             }
         }
 
-        IGenericRepository<Photo> IUnitOfWork.PhotoRepository
+        public IGenericRepository<Photo> PhotoRepository
         {
             get
             {
@@ -38,7 +38,7 @@ namespace DataBaseControl.Services
             }
         }
 
-        IGenericRepository<Subject> IUnitOfWork.SubjectRepository
+        public IGenericRepository<Subject> SubjectRepository
         {
             get
             {
@@ -46,7 +46,7 @@ namespace DataBaseControl.Services
             }
         }
 
-        IGenericRepository<User> IUnitOfWork.UserRepository
+        public IGenericRepository<User> UserRepository
         {
             get
             {
@@ -54,7 +54,7 @@ namespace DataBaseControl.Services
             }
         }
 
-        void IUnitOfWork.Save()
+        public void Save()
         {
             throw new NotImplementedException();
         }

@@ -3,18 +3,18 @@
     public abstract class Like
     {
         // Properties
-        int Id { get; set; }
-        User User { get; set; }
-        bool IsLiked { get; set; }
+        public int Id { get; set; }
+        public User User { get; set; }
+        public bool IsLiked { get; set; }
     }
     public class PhotoLike : Like
     {
         // Properties
-        Photo Photo { get; set; }
+        public Photo Photo { get; set; }
     }
-    public class CommentLike
+    public class CommentLike: Like
     {
         // Properties
-        Comment Comment { get; set; }
+        public Comment Comment { get; set; }
     }
 }
