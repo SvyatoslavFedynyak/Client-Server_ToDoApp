@@ -5,6 +5,9 @@
     /// </summary>
     public partial class Setting : System.Windows.Window
     {
+        /// <summary>
+        /// Initialize a new instance of <see cref="Setting"/>
+        /// </summary>
         public Setting()
         {
             InitializeComponent();

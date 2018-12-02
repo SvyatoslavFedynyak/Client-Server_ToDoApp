@@ -5,6 +5,9 @@
     /// </summary>
     public partial class MainWindow : System.Windows.Window
     {
+        /// <summary>
+        /// Initialize a new instance of <see cref="MainWindow"/>
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();

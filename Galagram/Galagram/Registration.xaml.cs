@@ -5,6 +5,9 @@
     /// </summary>
     public partial class Registration : System.Windows.Window
     {
+        /// <summary>
+        /// Initialize a new instance of <see cref="Registration"/>
+        /// </summary>
         public Registration()
         {
             InitializeComponent();

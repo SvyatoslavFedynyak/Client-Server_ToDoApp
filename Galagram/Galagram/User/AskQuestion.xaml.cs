@@ -5,6 +5,9 @@
     /// </summary>
     public partial class AskQuestion : System.Windows.Window
     {
+        /// <summary>
+        /// Initialize a new instance of <see cref="AskQuestion"/>
+        /// </summary>
         public AskQuestion()
         {
             InitializeComponent();

@@ -5,10 +5,16 @@
     /// </summary>
     public partial class Follow : System.Windows.Window
     {
+        /// <summary>
+        /// Initialize a new instance of <see cref="Follow"/>
+        /// </summary>
         public Follow()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Set up title for <see cref="Follow"/>
+        /// </summary>
         public string Header
         {
             get
