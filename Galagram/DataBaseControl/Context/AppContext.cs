@@ -3,7 +3,7 @@ using System.Data.Entity;
 
 namespace DataBaseControl.Context
 {
-    class AppContext : DbContext
+    public class AppContext : DbContext
     {
         // FIELDS
         DbSet<Photo> photos;
@@ -14,8 +14,12 @@ namespace DataBaseControl.Context
         DbSet<User> users;
 
         // CONSTRUCTORS
-        public AppContext()
-            : base("AppDbConnection")
+        /// <summary>
+        /// Basic constructor with parameter for context class
+        /// </summary>
+        /// <param name="connectionStringName">The name of connection string.</param>
+        public AppContext(string connectionStringName)
+            : base(connectionStringName)
         { }
 
         // PROPERTIES
