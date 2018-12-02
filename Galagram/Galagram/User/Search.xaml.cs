@@ -5,6 +5,9 @@
     /// </summary>
     public partial class Search : System.Windows.Window
     {
+        /// <summary>
+        /// Initialize a new instance of <see cref="Search"/>
+        /// </summary>
         public Search()
         {
             InitializeComponent();
