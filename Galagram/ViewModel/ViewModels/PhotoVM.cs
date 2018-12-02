@@ -1,7 +1,7 @@
 using ViewModel.Commands;
 
 using Models.Entities;
-using View;
+using Galagram;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 
@@ -14,7 +14,7 @@ namespace ViewModel.ViewModels
         private Comment[] comments;
 
         #region Windows
-        View.User.PhotoInside photoWindow;
+        Galagram.User.PhotoInside photoWindow;
         #endregion
 
         #region Commands
@@ -31,7 +31,34 @@ namespace ViewModel.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         // PROPERTIES
-        public string Photo { get; }
+        public string Photo
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+        }
+        public string Comment
+        {
+            set
+            {
+                throw new System.NotImplementedException();
+            }
+        }
+        public int LikesAmount
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+        }
+        public int DislikeAmount
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+        }
         public Comment[] Comments
         {
             get
