@@ -6,11 +6,17 @@
     public partial class MessageBoxYesNo : System.Windows.Window
     {
         // CONSTRUCTORS
+        /// <summary>
+        /// Initialize a new instance of <see cref="MessageBoxYesNo"/>
+        /// </summary>
         public MessageBoxYesNo()
         {
             InitializeComponent();
         }
         // PROPERTIES
+        /// <summary>
+        /// Set up title for <see cref="MessageBoxYesNo"/>
+        /// </summary>
         public string Header
         {
             get
@@ -22,6 +28,9 @@
                 HeaderLbl.Content = value;
             }
         }
+        /// <summary>
+        /// Set up message text for <see cref="MessageBoxYesNo"/>
+        /// </summary>
         public string Text
         {
             get
