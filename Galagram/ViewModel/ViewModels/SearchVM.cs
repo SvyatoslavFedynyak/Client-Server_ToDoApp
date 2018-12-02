@@ -1,7 +1,7 @@
 using ViewModel.Commands;
 
 using Models.Entities;
-using View;
+using Galagram;
 using System.ComponentModel;
 
 namespace ViewModel.ViewModels
@@ -14,7 +14,7 @@ namespace ViewModel.ViewModels
         public User[] users;
 
         #region Windows
-        View.User.Search searchWindow;
+        Galagram.User.Search searchWindow;
         #endregion
 
         #region Commands

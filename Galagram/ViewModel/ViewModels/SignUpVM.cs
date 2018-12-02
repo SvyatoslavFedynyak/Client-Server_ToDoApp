@@ -123,7 +123,7 @@ namespace ViewModel.ViewModels
                 if (logInRes)
                 {
                     CurrentUser = userFromDb;
-                    new View.User.MainWindow()
+                    new Galagram.User.MainWindow()
                     {
                         // send CurrentUser
                     }.Show();
@@ -175,7 +175,7 @@ namespace ViewModel.ViewModels
                 if (signUpRes)
                 {
                     CurrentUser = userFromDb;
-                    new View.User.MainWindow()
+                    new Galagram.User.MainWindow()
                     {
                         // send CurrentUser
                     }.Show();
@@ -214,7 +214,7 @@ namespace ViewModel.ViewModels
 
         private void ExecuteMessageWindow(string headerText, string contentText)
         {
-            new View.Dialogs.MessageBoxOk()
+            new Galagram.Dialogs.MessageBoxOk()
             {
                 Header = headerText,
                 Text = contentText

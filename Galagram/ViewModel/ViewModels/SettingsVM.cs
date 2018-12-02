@@ -1,7 +1,7 @@
 using ViewModel.Commands;
 
 using Models.Entities;
-using View;
+using Galagram;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 
@@ -15,7 +15,7 @@ namespace ViewModel.ViewModels
         private string newPassword;
 
         #region Windows
-        View.User.Setting settingWindow;
+        Galagram.User.Setting settingWindow;
         #endregion
 
         #region Commands
@@ -36,6 +36,10 @@ namespace ViewModel.ViewModels
             set
             {
                 nickname = value;
+            }
+            get
+            {
+                throw new System.NotImplementedException();
             }
         }
         public string Password
@@ -77,7 +81,6 @@ namespace ViewModel.ViewModels
             #endregion
         }
 
-        // METHODS
         // METHODS
         #region Commands
         private void ApplyMethod(object obj)
