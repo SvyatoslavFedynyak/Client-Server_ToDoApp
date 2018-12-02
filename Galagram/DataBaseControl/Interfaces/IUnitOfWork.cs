@@ -3,7 +3,7 @@ using Models.Entities;
 
 namespace DataBaseControl.Interfaces
 {
-    interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork : IDisposable
     {
         // PROPERTIES
         IGenericRepository<Subject> SubjectRepository { get; }

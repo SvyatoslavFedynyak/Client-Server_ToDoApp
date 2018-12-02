@@ -5,10 +5,10 @@ namespace Models.Entities
     public class Photo
     {
         // Properties
-        int Id { get; set; }
-        string Path { get; set; }
-        User Author { get; set; }
-        ICollection<Like> Likes { get; set; }
-        ICollection<Comment> Comments { get; set; }
+        public int Id { get; set; }
+        public string Path { get; set; }
+        public User Author { get; set; }
+        public ICollection<Like> Likes { get; set; }
+        public ICollection<Comment> Comments { get; set; }
     }
 }

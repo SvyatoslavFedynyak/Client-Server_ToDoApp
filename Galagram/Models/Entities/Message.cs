@@ -3,10 +3,10 @@
     public class Message
     {
         // Properties
-        int Id { get; set; }
-        string Text { get; set; }
-        User User { get; set; }
-        Subject Subject { get; set; }
-        System.DateTime Date { get; set; }
+        public int Id { get; set; }
+        public string Text { get; set; }
+        public User User { get; set; }
+        public Subject Subject { get; set; }
+        public System.DateTime Date { get; set; }
     }
 }

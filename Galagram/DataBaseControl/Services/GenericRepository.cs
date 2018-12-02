@@ -1,42 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
 using DataBaseControl.Interfaces;
+using System.Linq;
+using System.Linq.Expressions;
 
 namespace DataBaseControl.Services
 {
-    class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
-        int IGenericRepository<TEntity>.Count()
+        public int Count()
         {
             throw new NotImplementedException();
         }
 
-        void IGenericRepository<TEntity>.Delete(TEntity obj)
+        public void Delete(TEntity obj)
         {
             throw new NotImplementedException();
         }
 
-        void IGenericRepository<TEntity>.Delete(object id)
+        public void Delete(object id)
         {
             throw new NotImplementedException();
         }
 
-        IEnumerable<TEntity> IGenericRepository<TEntity>.Get()
+        public IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null,
+                                   Func<IQueryable<TEntity>,
+                                   IOrderedQueryable<TEntity>> orderBy = null,
+string includeProperties = "")
         {
             throw new NotImplementedException();
         }
 
-        IEnumerable<TEntity> IGenericRepository<TEntity>.GetById(int id)
+        public IEnumerable<TEntity> GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        void IGenericRepository<TEntity>.Insert(TEntity obj)
+        public void Insert(TEntity obj)
         {
             throw new NotImplementedException();
         }
 
-        void IGenericRepository<TEntity>.Update(TEntity obj)
+        public void Update(TEntity obj)
         {
             throw new NotImplementedException();
         }
