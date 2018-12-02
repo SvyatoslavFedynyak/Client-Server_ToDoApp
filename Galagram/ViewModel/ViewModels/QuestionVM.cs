@@ -1,7 +1,7 @@
 using ViewModel.Commands;
 
 using Models.Entities;
-using View;
+using Galagram;
 using System.ComponentModel;
 
 namespace ViewModel.ViewModels
@@ -13,7 +13,7 @@ namespace ViewModel.ViewModels
         private Subject selectedSubject;
 
         #region Windows
-        View.User.AskQuestion askQuestionWindow;
+        Galagram.User.AskQuestion askQuestionWindow;
         #endregion
 
         #region Commands
