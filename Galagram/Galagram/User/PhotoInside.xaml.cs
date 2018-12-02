@@ -5,6 +5,9 @@
     /// </summary>
     public partial class PhotoInside : System.Windows.Window
     {
+        /// <summary>
+        /// Initialize a new instance of <see cref="PhotoInside"/>
+        /// </summary>
         public PhotoInside()
         {
             InitializeComponent();
