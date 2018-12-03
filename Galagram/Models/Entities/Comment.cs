@@ -84,20 +84,8 @@ namespace Models.Entities
         }
         // CONSTRUCTORS
         /// <summary>
-        /// Constructor with parameters
+        /// Constructor without parameters
         /// </summary>
-        /// <param name="id">Id comment</param>
-        /// <param name="author">The author who commented</param>
-        /// <param name="likes">Amount of likes</param>
-        /// <param name="text">Text of the comment</param>
-        /// <param name="date">Time to write a comment</param>
-        public Comment(int id, User author, System.Collections.Generic.ICollection<Like> likes, string text, System.DateTime date)
-        {
-            this.id = id;
-            this.author = author;
-            this.likes = likes;
-            this.text = text;
-            this.date = date;
-        }
+        public Comment() { }
     }
 }
