@@ -131,27 +131,8 @@ namespace Models.Entities
         }
         // CONSTRUCTORS
         /// <summary>
-        /// Constructor with parameters
+        /// Constructor without parameters
         /// </summary>
-        /// <param name="id">Id user</param>
-        /// <param name="mainPhoto">The main user's photo</param>
-        /// <param name="nickName">Nickname user</param>
-        /// <param name="password">Password user</param>
-        /// <param name="album">Album user</param>
-        /// <param name="followers">followers user</param>
-        /// <param name="following">following user</param>
-        /// <param name="isAdmin">Defines or user is admin</param>
-        public User(int id, string mainPhoto, string nickName, string password, ICollection<Photo> album,
-                ICollection<User> followers, ICollection<User> following, bool isAdmin)
-        {
-            this.id = id;
-            this.mainPhoto = mainPhoto;
-            this.nickName = nickName;
-            this.password = password;
-            this.album = album;
-            this.followers = followers;
-            this.following = following;
-            this.isAdmin = isAdmin;
-        }
+        public User() { }
     }
 }
