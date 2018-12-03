@@ -39,14 +39,8 @@ namespace Models.Entities
         }
         // CONSTRUCTORS
         /// <summary>
-        /// Constructor with parameters
+        /// Constructor without parameters
         /// </summary>
-        /// <param name="id">Id subject</param>
-        /// <param name="name">Name subject</param>
-        public Subject(int id, string name)
-        {
-            this.id = id;
-            this.name = name;
-        }
+        public Subject() { }
     }
 }
