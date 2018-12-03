@@ -54,17 +54,9 @@ namespace Models.Entities
         }
         // CONSTRUCTORS
         /// <summary>
-        /// Constructor with parameters
+        /// Constructor without parameters
         /// </summary>
-        /// <param name="id">Id like</param>
-        /// <param name="user">User who has set the like</param>
-        /// <param name="isLiked">Defines or likes</param>
-        public Like(int id, User user, bool isLiked)
-        {
-            this.id = id;
-            this.user = user;
-            this.isLiked = isLiked;
-        }
+        public Like() { }         
     }
     /// <summary>
     /// Represents a derived class from Like, which models PhotoLike
@@ -90,16 +82,9 @@ namespace Models.Entities
         }
         // CONSTRUCTORS
         /// <summary>
-        /// Constructor with parameters
+        /// Constructor without parameters
         /// </summary>
-        /// <param name="id">Id photo</param>
-        /// <param name="user">User who put like in a photo</param>
-        /// <param name="isLiked">Defines or likes photo</param>
-        /// <param name="photo">photo with like</param>
-        public PhotoLike(int id, User user, bool isLiked, Photo photo) : base(id, user, isLiked)
-        {
-            this.photo = photo;
-        }
+        public PhotoLike() : base() { }
     }
     /// <summary>
     /// Represents a derived class from Like, which models CommentLike
@@ -125,15 +110,8 @@ namespace Models.Entities
         }
         // CONSTRUCTORS
         /// <summary>
-        /// Constructor with parameters
+        /// Constructor without parameters
         /// </summary>
-        /// <param name="id">Id comment</param>
-        /// <param name="user">User who put like in a comment</param>
-        /// <param name="isLiked">Defines or likes comment</param>
-        /// <param name="comment">Comment with like</param>
-        public CommentLike(int id, User user, bool isLiked, Comment comment) : base(id, user, isLiked)
-        {
-            this.comment = comment;
-        }
+        public CommentLike() : base() { }
     }
 }
