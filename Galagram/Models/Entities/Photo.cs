@@ -86,20 +86,8 @@ namespace Models.Entities
         }
         // CONSTRUCTORS
         /// <summary>
-        /// Constructor with parameters
+        /// Constructor without parameters
         /// </summary>
-        /// <param name="id">Id photo</param>
-        /// <param name="path">Path to the photo</param>
-        /// <param name="author">The author of the photo</param>
-        /// <param name="likes">Amount of likes in the photo</param>
-        /// <param name="comments">Amount of comments in the photo</param>
-        public Photo(int id, string path, User author, ICollection<Like> likes, ICollection<Comment> comments)
-        {
-            this.id = id;
-            this.path = path;
-            this.author = author;
-            this.likes = likes;
-            this.comments = comments;
-        }
+        public Photo() { }
     }
 }
