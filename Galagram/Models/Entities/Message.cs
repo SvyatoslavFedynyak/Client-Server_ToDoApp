@@ -84,20 +84,8 @@ namespace Models.Entities
         }
         // CONSTRUCTORS
         /// <summary>
-        /// Constructor with parameters
+        /// Constructor without parameters
         /// </summary>
-        /// <param name="id">Id message</param>
-        /// <param name="text">Text message</param>
-        /// <param name="user">User who wrote a message</param>
-        /// <param name="subject">Subject message</param>
-        /// <param name="date">Message sending time</param>
-        public Message(int id, string text, User user, Subject subject, System.DateTime date)
-        {
-            this.id = id;
-            this.text = text;
-            this.user = user;
-            this.subject = subject;
-            this.date = date;
-        }
+        public Message() { }
     }
 }
