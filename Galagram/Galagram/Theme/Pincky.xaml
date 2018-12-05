@@ -48,8 +48,9 @@
     <!--TEMPLATES-->
     <!--LIST BOX FOR IMAGE IN ALBUM-->
     <ControlTemplate x:Key="ListBoxAlbumImageTemplate" TargetType="ListBoxItem">
-        <Image Source="{Binding Path}" Style="{DynamicResource  PhotoImage}"/>
-
+      <Button Style="{DynamicResource ButtonBase}" Background="Transparent" Command="{Binding OpenPhoto}">
+        <Image Source="{Binding Path}" Style="{DynamicResource PhotoImage}"/>
+      </Button> 
     </ControlTemplate>
     <!--LIST BOX ITEM FOR SEARCH-->
     <ControlTemplate x:Key="ListItemSearchTemplate" TargetType="ListBoxItem">
@@ -715,7 +716,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <!--LIST BOX SEARCH-->
+    <!--LIST BOX BASE-->
     <Style TargetType="ListBoxItem" x:Key="ListBoxItemBase">
         <Setter Property="Background" Value="{StaticResource WhiteBrush}"/>
         <Style.Triggers>
