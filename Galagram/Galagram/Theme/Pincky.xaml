@@ -829,4 +829,76 @@
 
 
 
+
+    <!--ADMIN PART-->
+
+
+
+
+
+
+
+    <!--COLORS-->
+
+    <Color x:Key="OrangeColor">#E77D31</Color>
+    <Color x:Key="LightGrayColor">#EEEAED</Color>
+    <Color x:Key="DarkGrayColor">#37424B</Color>
+    <Color x:Key="MiddleGrayColor">#ABB3B8</Color>
+    <Color x:Key="DarkerGrayColor">#9A9A9A</Color>
+    <Color x:Key="LighterGrayColor">#E6E6E6</Color>
+
+    <!--BRUSHES-->
+    <SolidColorBrush x:Key="OrangeBrush" Color="{StaticResource OrangeColor}" />
+    <SolidColorBrush x:Key="LightGrayColorBrush" Color="{StaticResource LightGrayColor}" />
+    <SolidColorBrush x:Key="DarkGrayColorBrush" Color="{StaticResource DarkGrayColor}" />
+    <SolidColorBrush x:Key="MiddleGrayColorBrush" Color="{StaticResource MiddleGrayColor}" />
+    <SolidColorBrush x:Key="DarkerGrayColorBrush" Color="{StaticResource DarkerGrayColor}" />
+    <SolidColorBrush x:Key="LighterGrayColorBrush" Color="{StaticResource LighterGrayColor}" />
+
+
+
+    <!--LABEL IN THE LEFT CORNER-->
+    <Style TargetType="Label" x:Key="TopLeftLabel">
+        <Setter Property="Background" Value="{StaticResource OrangeBrush}"/>
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="Foreground" Value="{StaticResource WhiteBrush}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+    </Style>
+    <!--HEADER LABEL ADMIN-->
+    <Style TargetType="Label" x:Key="HeaderLabelAdmin">
+        <Setter Property="Background" Value="{StaticResource LightGrayColorBrush}"/>
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Padding" Value="15, 0, 0, 0"/>
+    </Style>
+
+    <!--BUTTON-->
+    <Style TargetType="Button" x:Key="AdminButton">
+        <Setter Property="Background" Value="{StaticResource DarkGrayColorBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource MiddleGrayColorBrush}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FontSize" Value="45"/>
+        <Setter Property="Template" Value="{DynamicResource ButtonTemplate}"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource DarkerGrayColorBrush}"/>
+                <Setter Property="Foreground" Value="{StaticResource WhiteBrush}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource LighterGrayColorBrush}"/>
+                <Setter Property="Foreground" Value="{StaticResource BlackBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!--ADMIN WHITE LABEL-->
+    <Style TargetType="Label" x:Key="AdminWhiteLabel" BasedOn="{StaticResource CenterWhiteLabel}">
+        <Setter Property="FontSize" Value="12"/>        
+    </Style>
+
+
+
 </ResourceDictionary>
