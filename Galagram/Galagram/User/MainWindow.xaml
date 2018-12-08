@@ -81,8 +81,7 @@
 
             <Label Grid.Column="3" 
                    Content="Galagram" 
-                   Foreground="White"
-                   Style="{StaticResource CenterLabel}"/>
+                   Style="{StaticResource CenterWhiteLabel}"/>
 
             <Button Grid.Column="4" 
                     Style="{StaticResource HeaderButton}"
