@@ -578,8 +578,13 @@
     <Style TargetType="Label" x:Key="CenterLabel" BasedOn="{StaticResource LabelBase}">
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="0"/>
 
         <Setter Property="FontSize" Value="25"/>
+    </Style>
+                <!--CENTER WHITE LABEL-->
+    <Style TargetType="Label" x:Key="CenterWhiteLabel" BasedOn="{StaticResource CenterLabel}">
+        <Setter Property="Foreground" Value="{StaticResource WhiteBrush}"/>
     </Style>
     <!--HEADER LABEL-->
     <Style TargetType="Label" x:Key="HeaderLabel" BasedOn="{StaticResource LabelBase}">
