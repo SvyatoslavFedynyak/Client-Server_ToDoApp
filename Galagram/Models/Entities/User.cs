@@ -84,7 +84,7 @@ namespace Models.Entities
             }
             set
             {
-                album = value
+                album = value;
             }
         }
         /// <summary>
