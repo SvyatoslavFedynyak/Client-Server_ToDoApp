@@ -123,11 +123,18 @@ namespace ViewModel.ViewModels
                 if (logInRes)
                 {
                     CurrentUser = userFromDb;
-                    new Galagram.User.MainWindow()
+
+                    Galagram.User.MainWindow mainWindow = new Galagram.User.MainWindow()
                     {
-                        // send CurrentUser
-                    }.Show();
-                    // closing current window
+                        DataContext = new HomeVM(CurrentUser)
+                    };
+
+                    System.Windows.Application.Current.MainWindow = mainWindow;
+
+                    mainWindow.Show();
+
+                    System.Windows.Application.Current
+                        .Windows.OfType<System.Windows.Window>().SingleOrDefault(w => w.Title == "Registration").Close();
                 }
                 else
                 {
@@ -175,11 +182,18 @@ namespace ViewModel.ViewModels
                 if (signUpRes)
                 {
                     CurrentUser = userFromDb;
-                    new Galagram.User.MainWindow()
+
+                    Galagram.User.MainWindow mainWindow = new Galagram.User.MainWindow()
                     {
-                        // send CurrentUser
-                    }.Show();
-                    // closing current window
+                        DataContext = new HomeVM(CurrentUser)
+                    };
+
+                    System.Windows.Application.Current.MainWindow = mainWindow;
+
+                    mainWindow.Show();
+
+                    System.Windows.Application.Current
+                        .Windows.OfType<System.Windows.Window>().SingleOrDefault(w => w.Title == "Registration").Close();
                 }
                 else
                 {
