@@ -1,18 +1,18 @@
+using DataBaseControl.Services;
 using ViewModel.Commands;
-
 using Models.Entities;
-using Galagram;
 using System.ComponentModel;
-using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace ViewModel.ViewModels
 {
+    /// <summary>
+    /// A class that bonds view and models and represents the logic of main window.
+    /// </summary>
     public class HomeVM : INotifyPropertyChanged
     {
         // FIELDS
-        #region Windows
-        Galagram.User.MainWindow mainWindow;
-        #endregion
+        private UnitOfWork unitOfWork;
 
         #region Commands
         private RelayCommand follow;
@@ -26,7 +26,7 @@ namespace ViewModel.ViewModels
         private RelayCommand openPhoto;
         private RelayCommand logOut;
         private RelayCommand followers;
-        private RelayCommand selectPhoto;
+        private RelayCommand selectedPhoto;
         #endregion
 
         // EVENTS
@@ -36,28 +36,63 @@ namespace ViewModel.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         // PROPERTIES
-        public User Owner { get; }
+        /// <summary>
+        /// Property that enables to interact with current user.
+        /// </summary>
+        public User CurrentUser { get; }
 
         #region Commands
+        /// <summary>
+        /// Property that enables to interact with exit command.
+        /// </summary>
         public RelayCommand Exit => exit;
+        /// <summary>
+        /// Property that enables to interact with home command.
+        /// </summary>
         public RelayCommand Home => home;
         /// <summary>
-        /// Property that enable to interact with search command.
+        /// Property that enables to interact with search command.
         /// </summary>
-        /// <returns>Log In command.</returns>
         public RelayCommand Search => search;
+        /// <summary>
+        /// Property that enables to interact with adding photo command.
+        /// </summary>
         public RelayCommand AddPhoto => addPhoto;
 
+        /// <summary>
+        /// Property that enables to interact with info command.
+        /// </summary>
         public RelayCommand Info => info;
+        /// <summary>
+        /// Property that enables to interact with settings command.
+        /// </summary>
         public RelayCommand Settings => settings;
+        /// <summary>
+        /// Property that enables to interact with log out command.
+        /// </summary>
         public RelayCommand LogOut => logOut;
 
+        /// <summary>
+        /// Property that enables to interact with follow command.
+        /// </summary>
         public RelayCommand Follow => follow;
+        /// <summary>
+        /// Property that enables to interact with following command.
+        /// </summary>
         public RelayCommand Following => following;
+        /// <summary>
+        /// Property that enables to interact with followers command.
+        /// </summary>
         public RelayCommand Followers => followers;
 
+        /// <summary>
+        /// Property that enables to interact with opening photo command.
+        /// </summary>
         public RelayCommand OpenPhoto => openPhoto;
-        public RelayCommand SelectPhoto => selectPhoto;
+        /// <summary>
+        /// Property that enables to interact with selected photo command.
+        /// </summary>
+        public RelayCommand SelectedPhoto => selectedPhoto;
         #endregion
 
         // CONSTRUCTORS
@@ -66,20 +101,41 @@ namespace ViewModel.ViewModels
         /// </summary>
         public HomeVM()
         {
-            #region Window Initialize
-            mainWindow = null;
-            #endregion
+            unitOfWork = new UnitOfWork();
+            CurrentUser = null;
 
             #region Commands Initialize
-
+            follow = new RelayCommand(FollowMethod);
+            home = new RelayCommand(HomeMethod);
+            following = new RelayCommand(FollowingMethod);
+            search = new RelayCommand(SearchMethod);
+            addPhoto = new RelayCommand(AddPhotoMethod);
+            info = new RelayCommand(InfoMethod);
+            settings = new RelayCommand(SettingsMethod);
+            exit = new RelayCommand(ExitMethod);
+            openPhoto = new RelayCommand(OpenPhotoMethod);
+            logOut = new RelayCommand(LogOutMethod);
+            followers = new RelayCommand(FollowersMethod);
+            selectedPhoto = new RelayCommand(SelectedPhotoMethod);
             #endregion
+        }
+
+        /// <summary>
+        /// Basic constructor with one parameter.
+        /// </summary>
+        public HomeVM(User user) : this()
+        {
+            CurrentUser = user;
         }
 
         // METHODS
         #region Commands
         private void FollowMethod(object obj)
         {
-
+            new Galagram.User.Follow()
+            {
+                DataContext = new FollowerVM()
+            }.Show();
         }
 
         private void HomeMethod(object obj)
@@ -91,39 +147,48 @@ namespace ViewModel.ViewModels
         {
 
         }
+
         private void SearchMethod(object obj)
         {
 
         }
+
         private void AddPhotoMethod(object obj)
         {
 
         }
+
         private void InfoMethod(object obj)
         {
 
         }
+
         private void SettingsMethod(object obj)
         {
 
         }
+
         private void ExitMethod(object obj)
         {
-
+            System.Windows.Application.Current.Shutdown();
         }
+
         private void OpenPhotoMethod(object obj)
         {
 
         }
+
         private void LogOutMethod(object obj)
         {
 
         }
+
         private void FollowersMethod(object obj)
         {
 
         }
-        private void SelectPhotoMethod(object obj)
+
+        private void SelectedPhotoMethod(object obj)
         {
 
         }
@@ -139,6 +204,5 @@ namespace ViewModel.ViewModels
             PropertyChanged?.Invoke(this, e);
         }
         #endregion
-
     }
 }
