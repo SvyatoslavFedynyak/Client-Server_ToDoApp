@@ -407,11 +407,14 @@
     <!--STYLE-->
 
     <!--WINDOW-->
-    <Style TargetType="Window" x:Key="ModalWindow">
+    <Style TargetType="Window" x:Key="WindowBase">
+        <Setter Property="Icon" Value="/Resources/ICO/ico.ico"/>
+    </Style>
+    <Style TargetType="Window" x:Key="ModalWindow" BasedOn="{StaticResource WindowBase}">
         <Setter Property="ResizeMode" Value="NoResize"/>
         <Setter Property="WindowStyle" Value="None"/>
     </Style>
-    <Style TargetType="Window" x:Key="ModalWindowResizable">
+    <Style TargetType="Window" x:Key="ModalWindowResizable" BasedOn="{StaticResource WindowBase}">
         <Setter Property="AllowsTransparency" Value="True"/>
         <Setter Property="ResizeMode" Value="CanResizeWithGrip"/>
         <Setter Property="WindowStyle" Value="None"/>
