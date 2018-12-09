@@ -7,7 +7,7 @@ using System.Linq;
 namespace ViewModel.ViewModels
 {
     /// <summary>
-    /// A class that bond view and models and represents signing up and logging in logic.
+    /// A class that bonds view and models and represents signing up and logging in logic.
     /// </summary>
     public class SignUpVM : INotifyPropertyChanged
     {
@@ -30,9 +30,8 @@ namespace ViewModel.ViewModels
 
         // PROPERTIES
         /// <summary>
-        /// Property that enable to interact with current user.
+        /// Property that enables to interact with current user.
         /// </summary>
-        /// <returns>Current user.</returns>
         public User CurrentUser
         {
             get
@@ -46,7 +45,7 @@ namespace ViewModel.ViewModels
             }
         }
         /// <summary>
-        /// Property that enable to interact with user login.
+        /// Property that enables to interact with user login.
         /// </summary>
         public string Nickname
         {
@@ -56,7 +55,7 @@ namespace ViewModel.ViewModels
             }
         }
         /// <summary>
-        /// Property that enable to interact with user password.
+        /// Property that enables to interact with user password.
         /// </summary>
         public string Password
         {
@@ -68,14 +67,12 @@ namespace ViewModel.ViewModels
 
         #region Commands
         /// <summary>
-        /// Property that enable to interact with Log In command.
+        /// Property that enables to interact with Log In command.
         /// </summary>
-        /// <returns>Log In command.</returns>
         public RelayCommand LogIn => logIn;
         /// <summary>
-        /// Property that enable to interact with Sign Up command.
+        /// Property that enables to interact with Sign Up command.
         /// </summary>
-        /// <returns>Sign Up command.</returns>
         public RelayCommand SignUp => signUp;
         #endregion
 
