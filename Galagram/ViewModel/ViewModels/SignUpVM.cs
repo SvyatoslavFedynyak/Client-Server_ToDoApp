@@ -124,17 +124,7 @@ namespace ViewModel.ViewModels
                 {
                     CurrentUser = userFromDb;
 
-                    Galagram.User.MainWindow mainWindow = new Galagram.User.MainWindow()
-                    {
-                        DataContext = new HomeVM(CurrentUser)
-                    };
-
-                    System.Windows.Application.Current.MainWindow = mainWindow;
-
-                    mainWindow.Show();
-
-                    System.Windows.Application.Current
-                        .Windows.OfType<System.Windows.Window>().SingleOrDefault(w => w.Title == "Registration").Close();
+                    CreateMainWindow();
                 }
                 else
                 {
@@ -183,17 +173,7 @@ namespace ViewModel.ViewModels
                 {
                     CurrentUser = userFromDb;
 
-                    Galagram.User.MainWindow mainWindow = new Galagram.User.MainWindow()
-                    {
-                        DataContext = new HomeVM(CurrentUser)
-                    };
-
-                    System.Windows.Application.Current.MainWindow = mainWindow;
-
-                    mainWindow.Show();
-
-                    System.Windows.Application.Current
-                        .Windows.OfType<System.Windows.Window>().SingleOrDefault(w => w.Title == "Registration").Close();
+                    CreateMainWindow();
                 }
                 else
                 {
@@ -211,6 +191,21 @@ namespace ViewModel.ViewModels
         #endregion
 
         #region Additional Methods
+        private void CreateMainWindow()
+        {
+            Galagram.User.MainWindow mainWindow = new Galagram.User.MainWindow()
+            {
+                DataContext = new HomeVM(CurrentUser)
+            };
+
+            System.Windows.Application.Current.MainWindow = mainWindow;
+
+            mainWindow.Show();
+
+            System.Windows.Application.Current
+                .Windows.OfType<System.Windows.Window>().SingleOrDefault(w => w.Title == "Registration").Close();
+        }
+
         private bool CheckRegistrateFields()
         {
             if (string.IsNullOrWhiteSpace(nickname))
